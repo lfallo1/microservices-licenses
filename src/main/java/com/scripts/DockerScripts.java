@@ -28,7 +28,7 @@ public class DockerScripts {
             //read the docker compose template into a string
             String dockerComposeContents = readFile("src/main/resources/docker/DockerComposeTemplate", Charset.defaultCharset());
 
-            //replace project.version placeholder with the application's version + git hash
+            //replace project.version placeholder with the application's version + git hash/branch
             dockerComposeContents = dockerComposeContents.replace("${project.version}", appVersion + "-" + gitHash + "-" + gitBranch);
 
             //write the resulting string into a new docker-compose.yml file
