@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   licenses-service:
-    image: lfallo1/licenses:0.0.2
+    image: lfallo1/licenses:0.0.2-48d0274
     restart: always
     ports:
       - "8080:8080"
