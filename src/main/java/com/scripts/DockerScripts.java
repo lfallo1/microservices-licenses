@@ -22,13 +22,14 @@ public class DockerScripts {
         FileWriter writer = null;
         String appVersion = getMavenProject().getVersion(); //get the app version from the pom.xml
         String gitHash = loadGitProperty("git.commit.id.abbrev"); //load the git hash from plugin generated git.properties file
+        String gitBranch = loadGitProperty("git.branch");
         try {
 
             //read the docker compose template into a string
             String dockerComposeContents = readFile("src/main/resources/docker/DockerComposeTemplate", Charset.defaultCharset());
 
             //replace project.version placeholder with the application's version + git hash
-            dockerComposeContents = dockerComposeContents.replace("${project.version}", appVersion + "-" + gitHash);
+            dockerComposeContents = dockerComposeContents.replace("${project.version}", appVersion + "-" + gitHash + "-" + gitBranch);
 
             //write the resulting string into a new docker-compose.yml file
             writer = new FileWriter(new File("docker-compose.yml"));
