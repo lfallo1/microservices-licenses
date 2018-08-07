@@ -21,7 +21,7 @@ public class DockerScripts {
         String appVersion = getMavenProject().getVersion();
         String gitHash = loadGitProperty("git.commit.id.abbrev");
         try {
-            String dockerComposeContents = readFile("src/main/resources/docker/DockerFileTemplate", Charset.defaultCharset());
+            String dockerComposeContents = readFile("src/main/resources/docker/DockerComposeTemplate", Charset.defaultCharset());
             dockerComposeContents = dockerComposeContents.replace("${project.version}", appVersion + "-" + gitHash);
             writer = new FileWriter(new File("docker-compose.yml"));
             writer.write(dockerComposeContents);
