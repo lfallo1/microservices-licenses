@@ -1,64 +1,70 @@
 package com.thoughtmechanix.licenses.model;
 
+import javax.persistence.*;
 
-public class License{
-  private String id;
-  private String organizationId;
-  private String productName;
-  private String licenseType;
+@Entity
+@Table(name = "license", schema = "public")
+public class License {
 
-  public String getId() {
-    return id;
-  }
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "license_id")
+    private String id;
+    private String organizationId;
+    private String productName;
+    private String licenseType;
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public String getOrganizationId() {
-    return organizationId;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setOrganizationId(String organizationId) {
-    this.organizationId = organizationId;
-  }
+    public String getOrganizationId() {
+        return organizationId;
+    }
 
-  public String getProductName() {
-    return productName;
-  }
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
 
-  public void setProductName(String productName) {
-    this.productName = productName;
-  }
+    public String getProductName() {
+        return productName;
+    }
 
-  public String getLicenseType() {
-    return licenseType;
-  }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-  public void setLicenseType(String licenseType) {
-    this.licenseType = licenseType;
-  }
+    public String getLicenseType() {
+        return licenseType;
+    }
 
-  public License withId(String id){
-    this.setId( id );
-    return this;
-  }
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+    }
 
-  public License withOrganizationId(String organizationId){
-    this.setOrganizationId(organizationId);
-    return this;
-  }
+    public License withId(String id) {
+        this.setId(id);
+        return this;
+    }
 
-  public License withProductName(String productName){
-    this.setProductName(productName);
-    return this;
-  }
+    public License withOrganizationId(String organizationId) {
+        this.setOrganizationId(organizationId);
+        return this;
+    }
 
-  public License withLicenseType(String licenseType){
-    this.setLicenseType(licenseType);
-    return this;
-  }
+    public License withProductName(String productName) {
+        this.setProductName(productName);
+        return this;
+    }
 
+    public License withLicenseType(String licenseType) {
+        this.setLicenseType(licenseType);
+        return this;
+    }
 
 
 }

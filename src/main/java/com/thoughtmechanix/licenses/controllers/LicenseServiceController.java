@@ -16,13 +16,13 @@ public class LicenseServiceController {
     public License getLicenses(@PathVariable("organizationId") String organizationId,
                                @PathVariable("licenseId") String licenseId) {
 
-        //return licenseService.getLicense(licenseId);
-        return new License()
-                .withId(licenseId)
-                .withOrganizationId(organizationId)
-                .withProductName("Telecorp")
-                .withLicenseType("Seat")
-                .withOrganizationId("TestOrganization");
+        return licenseService.getLicense(licenseId);
+//        return new License()
+//                .withId(licenseId)
+//                .withOrganizationId(organizationId)
+//                .withProductName("Telecorp")
+//                .withLicenseType("Seat")
+//                .withOrganizationId("TestOrganization");
     }
 
     @RequestMapping(value = "{licenseId}", method = RequestMethod.PUT)
