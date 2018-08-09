@@ -20,7 +20,7 @@ public class LicenseServiceController {
 //        return new License()
 //                .withId(licenseId)
 //                .withOrganizationId(organizationId)
-//                .withProductName("Telecorp")
+//                .withProductName("Telecorpe")
 //                .withLicenseType("Seat")
 //                .withOrganizationId("TestOrganization");
     }
