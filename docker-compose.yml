@@ -1,7 +1,9 @@
 version: "3.1"
 services:
   licenses-service:
-    image: lfallo1/licenses:0.0.2-f84900c-master
+    image: lfallo1/licenses:0.0.2-54e4b1c-master
     restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
     ports:
       - "8080:8080"
